@@ -1,0 +1,36 @@
+<div class="container">
+  <body>
+  <div>Hi {{vc.name}}</div>
+
+  <input type="search" placeholder="Enter search criteria" ng-model="searchTxt">
+  <hr>
+  <table class="table table-bordered table-responsive">
+    <thead>
+    <tr>
+      <th>Actions</th>
+      <th ng-click="prop = 'date'; reverse = !reverse;">Date</th>
+      <th ng-click="prop = 'time'; reverse = !reverse;">Time</th>
+      <th ng-click="prop = 'tel'; reverse = !reverse;">tel</th>
+      <th ng-click="prop = 'em'; reverse = !reverse;">Email</th>
+      <th ng-click="prop = 'special'; reverse = !reverse;">special</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr ng-repeat="person in mainVm.people | filter:mainVm.searchTxt">-->
+    <tr ng-repeat="person in vc.data | orderBy : prop : reverse|filter:searchTxt" ng-class="{true:'class-1' ,false:'class-2'}[person.id%2==0]">
+      <td class="class-1"><button ng-click="vc.deletePerson($index)">Delete</button></td>
+      <td>{{person.date|date:"yyyy-MM-dd"}}</td>
+      <td>{{person.time| date:"HH:mm:ss"}}</td>
+      <td>{{person.tel}}</td>
+      <td>{{person.em}}</td>
+      <td>{{person.special}}</td>
+
+    </tr>
+    </tbody>
+
+  </table>
+
+
+  </body>
+</div>

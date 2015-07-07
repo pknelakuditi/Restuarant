@@ -1,0 +1,56 @@
+
+<div class="container t1"  >
+
+    <h4>Make a Reservation</h4>
+<form role="form" ng-submit="rCtrl.addR(newR)">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="reserveDate">Date</label>
+                <input type="date" class="form-control" id="reserveDate" min={{rCtrl.today2}} max="2015-12-01" placeholder="MM/DD/YYYY" ng-model="newR.date">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="reserveTime">Time</label>
+                <input type="time" class="form-control" min="{{rCtrl.m1}}" max="{{rCtrl.m2}}" id="reserveTime" placeholder="HH:MM" step="1800" ng-model="newR.time">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="reserveName">Name</label>
+        <input type="text" class="form-control" id="reserveName" placeholder="Enter Your Name" ng-model="newR.name">
+    </div>
+
+    <div class="form-group">
+        <label for="reservePhone">Phone</label>
+        <input type="tel" class="form-control" id="reservePhone" placeholder="Enter Your Phone" ng-model="newR.tel">
+    </div>
+    <div class="form-group">
+        <label for="reserveEmail">Email</label>
+        <input type="email" class="form-control" id="reserveEmail" placeholder="example@domain.com" ng-model="newR.em">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="reserveSize">Party Size</label>
+                <input type="number" class="form-control" id="reserveSize" min="0" placeholder="# Guests" ng-model="newR.size1">
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <label for="reserveSpecial">Special Need</label>
+                <input type="text" class="form-control" id="reserveSpecial" placeholder="e.g. Birthday, Anniversary etc." ng-model="newR.special">
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn large-btn btn-default" >Reserve</button>
+
+        <button type="button" class="btn btn-link" onclick="location.href = 'Cancellation.html';">Change Existing Reservation?</button>
+
+    </div>
+</form>
+
+</div>

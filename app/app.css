@@ -1,0 +1,138 @@
+/* app css stylesheet */
+/*modal*/
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+
+body {
+  font-family:'PT Sans', sans-serif;
+  background: none;
+  margin-bottom: 60px;
+
+}
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+  color: rgba(84, 48, 26, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+  font-size: 15px;
+  background-color: rgba(241, 235, 205, 1);
+  border-width: 4px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+  color: rgba(84, 48, 26, 1);
+  background-color: rgba(241, 235, 205, 1);
+
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+  color: rgba(51, 51, 51, 1);
+  background-color: rgba(250, 245, 245, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+  color: rgba(85, 85, 85, 1);
+  background-color: rgba(250, 250, 250, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+  border-color: #fafafa;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+  background-color: #fafafa;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fafafa;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+  background-color: #f1ebcd;
+}
+body > .container {
+  padding: 40px 15px 0;
+
+
+}
+
+
+
+ul{
+  display: block;
+}
+
+.t1{
+  margin: auto;
+  border: solid #54301a ;
+  border-radius: 1%;
+
+}
+.btn-default{
+  background-color: #54301a;
+  color: #f1ebcd;
+}
+.btn-link{
+  color: #54301a;
+}
+
+table {
+  width: 100%;
+}
+.class-2{
+  background-color: #54301a;
+  color: white;
+}
+.class-1{
+  background-color:  #f1ebcd;
+  color: black;
+}
+
+section {
+
+  padding :20px;
+
+}
+
+html {
+  background: #f1ebcd;
+
+
+
+}
+
+footer {
+  /* Set the fixed height of the footer here */
+  height: 40px;
+
+
+  position: fixed;
+  bottom: 0;
+  width:100%;
+
+  background-color: #54301a;
+  text-align: center;
+  color: #f1ebcd;
+  font-size: 0.8em;
+
+}
+
+header ,section ,footer{
+  padding:20px;
+}
+
+.box{
+  padding:1.2em;
+  box-shadow:1em 1em .5em #888888 ;
+  border:.2em solid;
+  border-color: #54301a;
+  border-radius: 1em;
+}
+
+.borderimg1 {
+  border: 10px solid transparent;
+  padding:2em;
+  -webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+  -o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+  border-image: url(border.png) 30 round;
+}
