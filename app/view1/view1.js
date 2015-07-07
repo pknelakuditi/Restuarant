@@ -14,17 +14,26 @@ angular.module('myApp.view1', ['ngRoute'])
           controllerAs:'rCtrl'
       })
             .when('/About', {
-        templateUrl: 'view1/about.html',
-          controller:'testing',
-          controllerAs:'tst'
-      });
+        templateUrl: 'view1/about.html'
+
+      })
+      .when('/Cancel', {
+          templateUrl: 'view1/cancellation.html',
+          controller:'cancel-ctrl',
+          controllerAs:'canCtrl'
+      })
+  ;
 
 }])
 
-    .controller('testing',function(){
-        var a=this;
-        this.name="pavan";
-       //$window.alert('hi');
-    })
+    .controller('cancel-ctrl',['myService','$window',function(myService,$window){
+        var canCtrl=this;
+        canCtrl.deleteR=function(cc){
+            myService.deleteR(cc);
+            $window.alert("Your Reservation is cancelled!");
+        }
+
+        //$window.alert('hi');
+    }])
 
 

@@ -24,21 +24,22 @@ angular.module('myApp.view2', ['ngRoute'])
         vc.data=res[0];
         console.log(vc.data);
         console.dir(res)*/
-        vc.data=[];
+       // vc.data=[];
         var promise=myService.getR().then(
             function(payload) {
                 vc.data = payload.data;
                 vc.data.push(myService.getTempR()[0]);
+                console.dir(vc.data);
             },
             function(errorPayload) {
                 $log.error('failure loading reservations', errorPayload);}
                 );
 
 
-        console.dir(vc.data);
-        console.dir(myService.getTempR())
-        vc.data.push(myService.getTempR()[0]);
-        console.dir(vc.data);
+      //  console.dir(vc.data);
+     //   console.dir(myService.getTempR())
+      //  vc.data.push(myService.getTempR()[0]);
+    //   console.dir(vc.data);
 
 
 

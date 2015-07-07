@@ -6,6 +6,8 @@ angular.module('myApp').service('myService',function($http){
     var name="default";
     var my=this;
 
+    var cancellations=[];
+
     my.ser='hi';
 
     my.getName=function(){
@@ -18,10 +20,11 @@ angular.module('myApp').service('myService',function($http){
      var reservations=[];
     //fake data
     reservations.push({
+        "id":"bahub",
         "date": "2015-06-30T04:00:00.000Z",
         "time":"1970-01-01T18:30:00.000Z",
         "name": "varun Graham",
-        "tel":"3455678989",
+        "tel":"7706777777",
         "em": "Sincere@april.biz",
         "size1":"10",
         "special":"Birthday"
@@ -48,6 +51,7 @@ angular.module('myApp').service('myService',function($http){
     }
 
     my.nReserve=function(newR){
+
         reservations.push(newR);
         console.log(reservations);
     }
@@ -56,6 +60,12 @@ angular.module('myApp').service('myService',function($http){
    my.getTempR=function(){
        return reservations;
    }
+
+    my.deleteR=function(cc){
+        cancellations.push(cc);
+        console.log(cancellations);
+    }
+
 
 
    // console.log(my.reservations)
@@ -67,10 +77,3 @@ angular.module('myApp').service('myService',function($http){
 
 
 
-function service1(){
-    var name="imp-service";
-    this.getName=function(){
-        return name;
-    }
-
-}

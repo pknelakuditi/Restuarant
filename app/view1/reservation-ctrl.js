@@ -3,7 +3,7 @@
  */
 
 angular.module('myApp.view1')
-    .controller('reservationCtrl', ['myService',function(myService) {
+    .controller('reservationCtrl', ['myService','$window',function(myService,$window) {
 
         this.m1="10:00:00";
         this.m2="22:00:00";
@@ -32,9 +32,26 @@ angular.module('myApp.view1')
 
 
         this.addR=function(newR){
+            newR.id=getNewCC();
+
             myService.nReserve(newR);
             console.dir(myService)
             console.log('inserted');
+            $window.alert("Your confirmation code is : "+newR.id);
         }
+
+
+
+        var getNewCC=function()
+        {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for( var i=0; i < 5; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+
 
     }])
