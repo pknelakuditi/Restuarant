@@ -21,7 +21,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 }])
 
-    .controller('testing',function($window){
+    .controller('testing',function(){
         var a=this;
         this.name="pavan";
        //$window.alert('hi');

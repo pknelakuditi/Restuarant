@@ -1,17 +1,21 @@
 <div class="container">
 
-    <form class="form-signin" ng-submit="loginVm.login(credentials)">
+    <form name="userForm" class="form-signin" ng-submit="loginVm.login(credentials)" novalidate>
         <h4 class="form-signin-heading">Please sign in</h4>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input ng-model="credentials.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <div class="form-group">
+        <input ng-model="credentials.email" name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input ng-model="credentials.pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input name="pwd" ng-model="credentials.pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" ng-minlength="8" required>
+        <p ng-show="userForm.pwd.$error.minlength" class="help-block">password is too short.</p>
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-default " type="submit">Sign in</button>
+        <button class="btn btn-lg btn-default " type="submit" ng-disabled="userForm.$invalid">Sign in</button>
     </form>
 
 

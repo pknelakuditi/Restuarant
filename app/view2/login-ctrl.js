@@ -6,25 +6,25 @@
 (function(){
     angular.module('myApp.view2')
 
-        .controller('Login',function($location,myService){
+        .controller('Login',['$location','myService',function($location,myService){
 
 
-        var loginVm=this;
+            var loginVm=this;
 
-        loginVm.login=function(credentials){
-            //$http call goes here for authentication ,when success redirect
-            console.log(credentials) ;
-            $location.path('/Data');
+            loginVm.login=function(credentials){
+                //$http call goes here for authentication ,when success redirect
+                console.log(credentials) ;
+                $location.path('/Data');
 
-            console.log('coming')
-            myService.setName(credentials.email.split('@')[0]);
+                console.log('coming')
+                myService.setName(credentials.email.split('@')[0]);
 
-            console.log(myService.getName()+' hn '+myService.ser);
-            console.dir(myService)
+                console.log(myService.getName()+' hn '+myService.ser);
+                console.dir(myService)
 
             }
 
-    })
+        }])
 
 
 

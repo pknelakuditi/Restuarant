@@ -15,7 +15,17 @@ angular.module('myApp').service('myService',function($http){
         name=a;
     }
 
-     var reservations=[]
+     var reservations=[];
+    //fake data
+    reservations.push({
+        "date": "2015-06-30T04:00:00.000Z",
+        "time":"1970-01-01T18:30:00.000Z",
+        "name": "varun Graham",
+        "tel":"3455678989",
+        "em": "Sincere@april.biz",
+        "size1":"10",
+        "special":"Birthday"
+    });
 
 /*    init();
    // console.log(init())
@@ -43,7 +53,9 @@ angular.module('myApp').service('myService',function($http){
     }
 
   // console.log( my.getR());
-
+   my.getTempR=function(){
+       return reservations;
+   }
 
 
    // console.log(my.reservations)
